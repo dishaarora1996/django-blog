@@ -1,6 +1,6 @@
 # Introduction
 
-This django project is a portal for users to create blog posts and shows the list of blog posts uploaded to this website by users. Users need to login to create, update, and delete their respective blog posts.
+This django-blog project is a portal for users to create blog posts. It displays the list of blog posts uploaded to this website by it's registered users. Users need to login to create, update, and delete their respective blog posts. Any user can view the blog posts uploaded by other users without registering in the webiste.
 
 
 ## Setup
@@ -29,5 +29,5 @@ Create a virtual environment to install dependencies in and activate it:
 Once pip has finished downloading the dependencies:
 
     (env)$ python manage.py runserver
-    
+
 And navigate to http://127.0.0.1:8000/
