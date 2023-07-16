@@ -31,9 +31,9 @@
                     <td>{{blog.updated_at|date:'d b,Y'}}</td>
                     <td>{{blog.created_at|date:'d b,Y'}}</td>
                     <td>
-                        <a href=""><i class="fa fa-edit text-success"></i></a>
+                        <a href="{% url 'edit_blog' blog.slug %}"><i class="fa fa-edit text-success"></i></a>
                         &nbsp;
-                        <a href=""><i class="fa fa-trash text-danger"></i></a>
+                        <a href="{% url 'delete_blog' blog.slug %}"><i class="fa fa-trash text-danger"></i></a>
                     </td>
                 </tr>
                 {% endfor %}

@@ -8,7 +8,7 @@ from django.utils.html import format_html
 class CustomUserAdmin(UserAdmin):
 
     def profile_pic(self, obj):
-        return format_html('<img src="{}" width="{}" height="{}"/>'.format(obj.profile_image.url, 30, 30))
+        return format_html('<img src="{}" width="{}" height="{}" style="border-radius: 50%;"/>'.format(obj.profile_image.url, 30, 30))
 
     ordering=['id']
 
