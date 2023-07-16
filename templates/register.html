@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+    <!-- ============================ COMPONENT REGISTER   ================================= -->
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+        <div class="card-body">
+            <h4 class="card-title mb-4 text-center">Register</h4>
+            {% include 'include/alert.html'%}
+            <form action="{% url 'register_user' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>First name</label>
+                        <input type="text" class="form-control" placeholder="First Name" name="first_name" required>
+                    </div>
+                    <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Last name</label>
+                        <input type="text" class="form-control" placeholder="Last Name" name="last_name" required>
+                    </div>
+                    <!-- form-group end.// -->
+                </div>
+                <!-- form-row end.// -->
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" id="inputPassword" required>
+                </div> <!-- form-group// -->
+                <input type="checkbox" onclick="togglePassword()" class="mb-2">&nbsp;&nbsp;Show Password<br>
+                <label for="image"><strong>Upload Image: </strong></label>
+                <input type="file" name="image">
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-warning btn-block"> Signup </button>
+                </div> <!-- form-group// -->
+            </form>
+        </div> <!-- card-body.// -->
+        <!-- card-body.// -->
+    </div>
+    <!-- card .// -->
+    <p class="text-center mt-4">Have an account? <a href="{% url 'login_user' %}">Log In</a></p>
+    <br /><br />
+    <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+<script>
+    function togglePassword() {
+        var x = document.getElementById("inputPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+{% endblock %}

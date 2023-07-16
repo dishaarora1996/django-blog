@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-sm bg-light">
     <span>
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'images/blog_logo.png' %}" width="40" height="40" alt="">
         </a>
     </span>
@@ -10,33 +10,45 @@
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item m-2">
-            <a class="nav-link text-dark" href="">
+            <a class="nav-link text-dark" href="{% url 'index' %}">
                 Blogs
             </a>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item m-2">
             <a class="nav-link text-dark" href="">
                 Dashboard
             </a>
         </li>
+        {% if user.profile_image %}
+        <li class="nav-item m-2">
+            <a href="">
+                <img src="{{user.profile_image.url}}" alt="profile_pic"
+                    style="width:30px; height: 30px; border-radius: 50%">
+            </a>
+
+        </li>
+        {% endif %}
         <li class="nav-item m-2">
             <a class="nav-link text-dark" href="">
-                Hi,
+                Hi, {{user.first_name}}
             </a>
         </li>
         <li class="nav-item m-2">
-            <a class="btn btn-sm btn-outline-secondary nav-link" href="">Logout</a>
+            <a class="btn btn-sm btn-outline-secondary nav-link" href="{% url 'logout_user' %}">Logout</a>
         </li>
+        {% else %}
 
         <li class="nav-item m-2">
-            <span><a class="btn btn-sm btn-warning nav-link" href="">Login</a></span>
+            <span><a class="btn btn-sm btn-warning nav-link" href="{% url 'login_user' %}">Login</a></span>
             &nbsp;&nbsp;&nbsp;&nbsp;
         </li>
 
         <li class="nav-item m-2">
-            <a class="btn btn-sm btn-outline-secondary nav-link" href="">Register</a>
+            <a class="btn btn-sm btn-outline-secondary nav-link" href="{% url 'register_user' %}">Register</a>
         </li>
 
+        {% endif %}
 
     </ul>
 
