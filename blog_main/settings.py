@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +148,5 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
