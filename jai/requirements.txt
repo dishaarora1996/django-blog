@@ -1,0 +1,16 @@
+asgiref==3.7.2
+# backports.zoneinfo==0.2.1
+backports.zoneinfo==0.2.1;python_version<"3.9"
+cffi==1.16.0
+cryptography==42.0.5
+Django==4.2.11
+django-cors-headers==4.3.1
+django-rest-knox==4.2.0
+djangorestframework==3.14.0
+pillow==10.2.0
+psycopg2-binary==2.9.9
+pycparser==2.21
+pytz==2024.1
+python-dotenv==1.0.0
+sqlparse==0.4.4
+typing-extensions==4.9.0
